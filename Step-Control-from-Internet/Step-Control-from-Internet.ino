@@ -60,8 +60,9 @@ void loop(){
       String webPage = "<h1>Step Motor Kontrol</h1><br>";                           
       webPage+="<br><a href=\"?step=forward\"><button><h1>forward</h1></button></a>";
       webPage+="<br><br><a href=\"?step=back\"><button><h1>back</h1></button></a>";
-
+      
       command = "AT+CIPSEND=";                                    //Sayfa verisinin uzunluğu komut değişkenine eşitlenir.
+
       command += connectionId;
       command += ",";
       command +=webPage.length();
@@ -133,7 +134,7 @@ void stepback(int sleep){                                //Step motora forward h
   digitalWrite(motorPin4, HIGH);
   delay(sleep);
   digitalWrite(motorPin1, LOW);
-  digitalWrite(motorPin2, LOW);
+  digitalWrite(motorPin2, LOW); 
   digitalWrite(motorPin3, HIGH);
   digitalWrite(motorPin4, LOW);
   delay(sleep);
