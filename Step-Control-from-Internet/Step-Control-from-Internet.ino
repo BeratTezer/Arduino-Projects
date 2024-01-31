@@ -60,18 +60,23 @@ void loop(){
       String webPage = "<h1>Step Motor Kontrol</h1><br>";                           
       webPage+="<br><a href=\"?step=forward\"><button><h1>forward</h1></button></a>";
       webPage+="<br><br><a href=\"?step=back\"><button><h1>back</h1></button></a>";
+
       command = "AT+CIPSEND=";                                    //Sayfa verisinin uzunluğu komut değişkenine eşitlenir.
       command += connectionId;
       command += ",";
       command +=webPage.length();
       command +="\r\n";
+
       Serial.print(command);                                      //Komut gönderilir.
       delay(1000);
+
       Serial.print(webPage);                                      //Sayfa verisi gönderilir.
       delay(1000);
+
       command = "AT+CIPCLOSE=";                                   //Bağlantı sonlandırma komutu ayarlanır.    
       command+=connectionId;
       command+="\r\n";
+
       Serial.print(command);                                      //Bağlantı sonlandırma komutu gönderilir.
     }
   }
