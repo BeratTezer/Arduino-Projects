@@ -16,25 +16,25 @@ void loop() {
 
   if(movement == HIGH) {
     servo.write(150);
-    delay(250);
+    delay(200);
     
     servo.write(30);
-    delay(250);
+    delay(200);
     
     servo.write(150);
-    delay(250);
+    delay(200);
     
     servo.write(30);
-    delay(250);
+    delay(200);
     
     servo.write(150);
-    delay(250);
+    delay(200);
     
     servo.write(30);
-    delay(250);
+    delay(200);
 
     servo.write(90);
   } else {
-    motor.write(90);
+    servo.write(90);
   }
 }
